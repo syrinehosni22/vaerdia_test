@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filter-container {
+  position: absolute;
+  right:10px;
+  top:10px;
+  z-index: 1000;
+  width:300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container span {
+  padding: 10px 30px 10px;
+  background-color: #007bff;
   color: white;
+  margin: 0px;
+
 }
 
-.App-link {
-  color: #61dafb;
+.filter-list {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hide default checkbox */
+.filter-item input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Hide default checkbox */
+.filter-item input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Custom checkbox square */
+.filter-item input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: transparent; /* Light gray background */
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Custom "V" checkmark */
+.filter-item input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid #848383; /* Gray color */
+  border-bottom: 2px solid #848383; /* Gray color */
+  transform: rotate(30deg);
+  display: none;
+}
+
+/* Show the "V" when checked */
+.filter-item input[type="checkbox"]:checked::before {
+  background-color: transparent; /* Gray background when checked */
+}
+
+.filter-item input[type="checkbox"]:checked::after {
+  display: block;
 }
