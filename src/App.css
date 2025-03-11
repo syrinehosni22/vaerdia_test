@@ -91,3 +91,22 @@
 .filter-item input[type="checkbox"]:checked::after {
   display: block;
 }
+
+.primary-button{
+  background-color: #f8f9fa;
+  border: 0px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  padding:10px;
+}
+
+.table-head th{
+  background-color: #007bff;
+  color:white;
+  padding: 10px;
+}
+.table-body tr{
+  border-bottom: 1px;
+} 
+.m{
+  margin:20px;
+}
